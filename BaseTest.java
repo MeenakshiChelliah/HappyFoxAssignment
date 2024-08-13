@@ -13,6 +13,9 @@ public class BaseTest {
     public void beforeSuite() {
     	
     	System.setProperty("webdriver.chrome.driver","C:\\Users\\test\\Desktop\\D drive\\automation\\Chrome driver\\chromedriver.exe");
+	// Line number 15: Driver file path cannot be hardcoded. we can keep the driver.exe in separate folder called Driver. 
+	for filepath use getCurrentWorkingDirectory method from AppPage.jav
+.
         driver = new ChromeDriver();
     }
     
