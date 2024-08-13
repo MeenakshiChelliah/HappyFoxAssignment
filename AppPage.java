@@ -34,7 +34,7 @@ public class AppPage {
 	protected WebDriver driver ;
 	
 	JavascriptExecutor javaScriptExecutor;
-	
+	//for each method we can implement try catch to handle the exceptions at run time
 	public AppPage(WebDriver driver) {
 		this.driver = driver;
 		waitImplicitly();	
