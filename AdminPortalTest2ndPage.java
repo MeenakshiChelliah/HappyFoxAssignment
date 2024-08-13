@@ -9,12 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import webdriverbase.AppPage;
 
 public class AdminPortalTest2ndPage extends AppPage {
-
 	public AdminPortalTest2ndPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
+	//Element locators are hardcoded. We can keep it in Object repository so that error rectification is easy when elements are changed dynamically.
+	//Line numbers:18,21,34,43,52,61,71,82,91,100,103,115,125,136,145 locators are hardcoded.
 	@FindBy(xpath = "//span[@class='hf-top-bar_title_text hf-font-light']")
 	private WebElement Title;
 	
@@ -153,6 +153,7 @@ public class AdminPortalTest2ndPage extends AppPage {
    	}
    
      public void sleep() throws InterruptedException {
-    	 Thread.sleep(2000);
+    	 Thread.sleep(2000); //Instead of Sleep() method, we can use webdriver waits.and if this is necessary stil, Already we are having Sleep() method in AdminPortalTest1AndPage.we can reuse 
+
      }
 }
