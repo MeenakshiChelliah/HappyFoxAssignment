@@ -34,10 +34,13 @@ public static String Subject = "Test Ticket raised by XYZ";
 public static String Message = "Hi, i am having certain issues in the Happy fox portal. Can you please help me.";
 public static String FullName = "Reese Harrold";
 public static String Email = "testno100@gmail.com";
+//Line 26 to 36: We can keep this as constants  in separate file.file can be java or excel sheet. And we should implement method for excel reader.
+
 
 public void loginasAdmin() {
     
     String Methodname = new Object(){}.getClass().getEnclosingMethod().getName(); 
+	//Methodname can be declared as static variable and should be globally decalred for this file
 	System.out.println("Start of LoginAsAdmin "+"MethodName : "+Methodname); 
 
 	try
@@ -67,6 +70,7 @@ public void loginasAdmin() {
   public void CreatingSupportTicket() {
 	  
 	  String Methodname = new Object(){}.getClass().getEnclosingMethod().getName(); 
+	  //Methodname can be declared as static variable and should be globally decalred for this file
 	  System.out.println("Start of Client support ticket "+"MethodName : "+Methodname); 
 	  
 	  try 
@@ -98,6 +102,8 @@ public void loginasAdmin() {
 		try {
 			
 			String Classname = getClass().getSimpleName();
+			//Classname can be declared as static variable and should be globally decalred for this file.
+			//Consider the alignment and format of the file also.
           System.out.println("start of method : " + Classname);
           hpAdminPortalTest1=hploginpage.validatePendingTicketsTitle();
           hpAdminPortalTest1.clickStatus();
@@ -137,6 +143,8 @@ public void loginasAdmin() {
 		try {
 			
 			String Classname = getClass().getSimpleName();
+			//Classname can be declared as static variable and should be globally decalred for this file.
+			//Consider the alignment and format of the file also.
           System.out.println("start of method : " + Classname);
           CreatingSupportTicket();
           hploginpage.validatePendingTicketsTitle1();
@@ -147,7 +155,7 @@ public void loginasAdmin() {
           //Assertion of the Priority and Status of the ticket created 
           Assert.assertEquals(hpAdminPortalTest2.getContactName(),"Aravind"); 
           Assert.assertEquals(hpAdminPortalTest2.getEmailtxt(),Email);
-          
+          //Create separate method for Validation, call and  pass the actual, Expected values are parameters.Whereever the validation we can 			use.Code resuability can be achive here
           hpAdminPortalTest2.clickReplyButton();
           Assert.assertEquals(hpAdminPortalTest2.getStatustxt(),statusName);
           Assert.assertEquals(hpAdminPortalTest2.getPrioritytxt(),priorityName.toUpperCase());
@@ -195,6 +203,7 @@ public void loginasAdmin() {
 			hpAdminPortalTest1.clickProfile();
             hpAdminPortalTest1.clickLogout();
             System.out.println("Logged out successfully"); 
+			//Consider the alignment and spacing, line intent of the file also.
 			
 				
 		} 
