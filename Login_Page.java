@@ -23,8 +23,10 @@ static class BasePage {
         public void login(String username, String password) {
 
             driver.findElement(By.id("username")).sendKeys(username);
-            driver.findElement(By.id("password")).sendKeys(password);
-            driver.findElement(By.id("loginButton")).click();
+            driver.findElement(By.id("password")).sendKeys(password); //Line 25,26:User name and password can be done through common
+								      //methods.Create method ,pass element locators to the method and acheive the sendKeys.
+            driver.findElement(By.id("loginButton")).click(); //Line 28: Click also can achieve creating common methods for this.So that we achieve code reusability.
+
         }
 
         public void forgotPassword() {
@@ -38,18 +40,19 @@ static class BasePage {
         }
 
         public void verifyHomePage() {
-            if (!driver.getCurrentUrl().equals("https://www.happyfox.com/home")) {
+            if (!driver.getCurrentUrl().equals("https://www.happyfox.com/home")) { //URL can be store it as constant in a separate constant file and call it over here.
+
                 throw new IllegalStateException("Not on the home page");
             }
         }
 
         public void navigateToProfile() {
-            driver.findElement(By.id("profileLink")).click();
+            driver.findElement(By.id("profileLink")).click(); //Element locators are hardcoded.we can keep it in object repo
         }
 
     public class TablePage extends BasePage {
 
-    private By rowLocator = By.xpath("//table[@id='dataTable']/tbody/tr");
+    private By rowLocator = By.xpath("//table[@id='dataTable']/tbody/tr");//Element locators are hardcoded.we can keep it in object repo
 
     public TablePage(WebDriver driver) {
         super(driver);
