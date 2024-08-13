@@ -12,13 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import webdriverbase.AppPage;
 
 public class AdminPortalTest1stPage extends AppPage {
-
 	public AdminPortalTest1stPage(WebDriver driver) {
 		super(driver);
 		
 	}
 	
-	
+	//Element locators are hardcoded. We can keep it in Object repository so that error rectification is easy when elements are changed dynamically.
+	//Line number:22,50,58,66,74,85,96,105,112,122,136
 	@FindBy(xpath = "//span[@class='hf-top-bar_title_text hf-font-light']")
 	private WebElement Title;
 	
@@ -134,6 +134,7 @@ public class AdminPortalTest1stPage extends AppPage {
 	}
 	
 	@FindBy(xpath = "/html[1]/body[1]/div[3]/div[1]/section[1]/section[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[9]/td[2]")
+	//Line number 136: absolute path used. We can use relative path or css selector to avoid no such element exception
 	private WebElement NewPriority;
 	
 	public void clickNewPriority() {
@@ -182,7 +183,8 @@ public class AdminPortalTest1stPage extends AppPage {
 	    sleep();
 	    
 	}	
-	
+	Line number 182,183,189:instead of Sleep() method we can use implicit or explicit waits.
+
 	public void ClickAddedPriority(String xpath) throws InterruptedException {
 		sleep();
 		String priority = "//span[contains(text(),'"+xpath+"')]";
