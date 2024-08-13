@@ -30,6 +30,7 @@ public class AppPage {
 	public static String PATH_TO_TEST_DATA_FILE = "src/main/resources/";
 	public static String WINDOWS_PATH_TO_TEST_DATA_DIR = "src/main/resources/";
 	public static int WAIT_TIME_SEC = 60;	
+	//We can keep this constants in the separate file (example: Constants.java) and use it over here.
 	protected WebDriver driver ;
 	
 	JavascriptExecutor javaScriptExecutor;
